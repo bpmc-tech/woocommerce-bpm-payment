@@ -1,13 +1,4 @@
 # woocommerce-bpm-payment
 
-WoocommerceでBPM決済を利用するためのプラグインになります。
-
-## WordPressにWoocommerceを追加
-
-下記サイトを参照してWoocomerceをインストールしてください。
-
-https://wpshop-lab.net/woocommerce-install-and-initial-setting/
-
-
-
-## BPM決済を追加
+WoocommerceでBPM決済を利用するためのプラグインサンプルになります。
+**正式なプラグインではないため、あくまで加盟店様側で実装する上での参考・ベースとしてご利用ください**
