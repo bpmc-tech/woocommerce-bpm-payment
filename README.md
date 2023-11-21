@@ -53,7 +53,7 @@ IPアドレスの登録（別途登録方法は案内いたします）。
 
 - 設定画面が開くので、「Endpoint URL」「API_TOKEN」「API_SECRET」「対応カードブランド」を設定します。
   
-  ※Endpoint URLには `https://payment.bpmc.jp/gateway/{発行されたAPI_TOKEN}/payment` と入力してください。
+  ※Endpoint URLには `https://payment.bpmc.jp/gateway/発行されたAPI_TOKEN/payment` と入力してください。
 
 ![スクリーンショット 2023-11-21 12 38 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/8e43240d-5560-4d87-8fdd-e247441d88da)
 
