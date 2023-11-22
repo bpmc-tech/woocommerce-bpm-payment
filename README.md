@@ -8,7 +8,7 @@ WoocommerceにてBPMクレジット決済をするためのプラグインにな
 
 # 3.　サポート環境
 - WordPress v6.4.1
-- Woocommerce v8.3.0
+- Woocommerce v8.3.1
 - PHP v8.2.9
 
 # 4．ライセンスに関する表記
@@ -36,11 +36,11 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 - 「プラグインのアップロード」から5.2でダウンロードしたzipファイルを選択し、「今すぐインストール」をクリックします。
   
-![スクリーンショット 2023-11-21 12 30 00](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/43812e9b-f726-4563-a1ed-a60890b8bfd5)
+![スクリーンショット 2023-11-22 11 52 15](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/1eaac4eb-dafa-45e4-91f6-f1c8ea2ff856)
 
 - 画面が切り替わるので「プラグインを有効化」を選択し、プラグインを有効化します。
   
-![スクリーンショット 2023-11-21 12 37 41](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/5e3f81be-db76-4e41-a16c-07299369bcb2)
+![スクリーンショット 2023-11-22 11 52 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/3acda431-988f-4a88-b660-b8880ebcd87a)
 
 ## 5.4．設定方法
 - 左側のメニューバーの「woocommerce」から「設定」を選択します。
