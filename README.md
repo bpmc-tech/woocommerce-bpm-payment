@@ -21,7 +21,7 @@ MITライセンスとなっております。
 ## 5.1．事前に必要なもの
 弊社との契約時に発行される、「API Token」 「API Secret」が必要になります。
       
-IPアドレスの登録（別途登録方法は案内いたします）。
+IPアドレスの登録も必要になります。（別途登録方法は案内いたします）。
 
 ## 5.2．プラグインのダウンロード方法
 - こちらのURL(https://github.com/bpmc-tech/woocommerce-bpm-payment/releases)
