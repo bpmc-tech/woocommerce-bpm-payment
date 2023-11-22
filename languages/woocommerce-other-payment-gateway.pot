@@ -26,6 +26,10 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco - https://localise.biz/"
 
+#. Description of the plugin
+msgid "BPM test."
+msgstr ""
+
 #: /class-woocommerce-other-payment-gateway.php:10 /class-woocommerce-other-
 #: payment-gateway.php:11 /class-woocommerce-other-payment-gateway.php:49
 msgid "Other Payment"
