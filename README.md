@@ -52,8 +52,14 @@ IPアドレスの登録（別途登録方法は案内いたします）。
 ![スクリーンショット 2023-11-21 12 38 19](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/93211488-fb3d-4223-a559-34dd19e17712)
 
 - 設定画面が開くので、「Endpoint URL」「API_TOKEN」「API_SECRET」「対応カードブランド」を設定します。
+
+  「API_TOKEN」と「API_SECRET」には弊社から発行されたものを設定してください。
   
-  ※Endpoint URLには `https://payment.bpmc.jp/gateway/発行されたAPI_TOKEN/payment` と入力してください。
+  「Endpoint URL」は `https://payment.bpmc.jp/gateway/発行されたAPI_TOKEN/payment` と設定してください。
+
+  「cc_brands」にはBPM-Paymentで用いたいカードブランドにチェックを付けてください。
+
+  ※「ログ出力をする」は開発者向けの項目になります。詳しくは6.1に記載します。
 
 ![スクリーンショット 2023-11-21 12 38 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/8e43240d-5560-4d87-8fdd-e247441d88da)
 
@@ -82,7 +88,13 @@ IPアドレスの登録（別途登録方法は案内いたします）。
 ## 6.1．作成されるデータベースについて
 プラグインを有効化し、BPM-Paymentにて決済を行うと、「wp_wc_bpm_payment_tran」テーブルが作成されます。
 
-また、5.4の設定画面にて「ログ出力をする」にチェックを付けると、ログファイルを出力します。
+また、5.4の設定画面にて「ログ出力をする」にチェックを付けると、ログファイルを出力します。ログファイルには
+ 
+ - 決済URL
+ - 送信パラメータ
+ - Response
+  
+が格納されます。
 
 # 7． サポートについて
 info@bpmc.co.jpまで問い合わせください。
