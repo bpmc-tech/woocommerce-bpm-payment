@@ -539,37 +539,37 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
             <div class="card-input-form" style="justify-content: center;">
                 <div class="row" style="width:90%;align-items:center;margin: 0 auto;">
                   <div style="display:flex;">
-                    <div style="margin-right:1rem;">
+                    <div style="margin-right:1rem;margin-top:1rem;">
                       <div>
-                        <i class="lt">カード番号<span style="color:#ff0000;"> *</span></i><br>
+                        <b class="lt">カード番号<span style="color:#ff0000;"> *</span></b><br>
                         <input style="background-color:#ffffff; max-width:160px;" style="" type="text" id="ccnum" name="bpm-payment-cardnumber" class="form-controll" placeholder="XXXX XXXX XXXX XXXX" data-description="ハイフン不要|半角数字を入力してください"  inputmode="numeric" required="required" autocomplete="cc-number">
                       </div>
                       <div class="row" style="width: 100%; min-width:160px;">
-                        <label style="font-size:14px;">Supported Card Brands</label>
+                        <label style="font-size:12px;">利用可能なカードブランド</label>
                         <div style="display:flex;">
                           <?php if($this->cc_brand_array[0] == 'yes') : ?>
-                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/visa.png" alt="VISA" style="width:20%; height:100%; margin-right: 5px;">
+                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/visa.jpg" alt="VISA" style="width:50%; margin-right: 5px;">
                             <!-- <i class="fab fa-cc-visa fa-3x" style="color:navy;">VISA</i> -->
                           <?php endif ?>
                           <?php if($this->cc_brand_array[1] == 'yes') : ?>
-                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/master.png" alt="MASTER" style="width:20%; height:100%; margin-right: 5px;">
+                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/master.png" alt="MASTER" style="width:50%; margin-right: 5px;">
                             <!-- <i class="fab fa-cc-mastercard fa-3x" style="color:red;">master</i> -->
                           <?php endif ?>
                           <?php if($this->cc_brand_array[2] == 'yes') : ?>
-                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/jcb.png" alt="JCB" style="width:20%; height:100%; margin-right: 5px;">
+                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/jcb.png" alt="JCB" style="width:50%; margin-right: 5px;">
                             <!-- <i class="fab fa-cc-jcb fa-3x" style="color:orange;">JCB</i> -->
                           <?php endif ?>
                           <?php if($this->cc_brand_array[3] == 'yes') : ?>
-                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/amex.png" alt="AMEX" style="width:20%; height:100%; margin-right: 5px;">
+                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/amex-logo.png" alt="AMEX" style="width:50%; margin-right: 5px;">
                           <?php endif ?>
                           <?php if($this->cc_brand_array[4] == 'yes') : ?>
-                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/diners.png" alt="diners" style="width:20%; height:100%;">
+                            <img src="https://ec-test.bpmc.tech/wp-content/plugins/woocommerce-bpm-payment/images/diners.png" alt="diners" style="width:50%;">
                           <?php endif ?>
                         </div>
                       </div>
                     </div>
-                    <div style="width:100%;">
-                      <i class="lt">有効期限<span style="color:#ff0000;"> *</span></i><br>
+                    <div style="width:100%; margin-top:1rem;">
+                      <b class="lt">有効期限<span style="color:#ff0000;"> *</span></b><br>
                       <select style="width:40%;" class="select2" id="expmonth" name="bpm-payment-expmonth" placeholder="01" required >
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -599,14 +599,14 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
                 <br>
                 <div class="row" style="display:flex;">
                   <div style="margin-right:1rem;">
-                    <i class="lt">カード名義<span style="color:#ff0000;"> *</span></i><br>
+                    <b class="lt">カード名義<span style="color:#ff0000;"> *</span></b><br>
                     <input type="text" id="cname" name="bpm-payment-ccname" style="background-color:#ffffff;width: 100%;" placeholder="<?php echo $this->id ?>" autocomplete="cc-name" required />
                     <div style="font-size: 10px;color: #666; padding: 5px;">
                       半角英文字(大)
                     </div>
                   </div> 
                   <div>
-                    <i class="lt">CVV<span style="color:#ff0000;"> *</span></i><br>
+                    <b class="lt">CVV<span style="color:#ff0000;"> *</span></b><br>
                     <input type="tel" id="cvv" name="bpm-payment-cvv" style="background-color:#ffffff;width:100%;" class="txt mono" placeholder="XXX" data-description="カード裏面にある下3桁の半角数字|Amexの場合は、カード表面の右側の4桁の半角数字" pattern="[0-9]*" inputmode="numeric" required="required" autocomplete="cc-csc" maxlength="4"  />
                     <div style="font-size: 10px;color: #666; padding: 5px;">
                       セキュリティコード
