@@ -600,7 +600,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
                 <div class="row" style="display:flex;">
                   <div style="margin-right:1rem;">
                     <b class="lt">カード名義<span style="color:#ff0000;"> *</span></b><br>
-                    <input type="text" id="cname" name="bpm-payment-ccname" style="background-color:#ffffff;width: 100%;" placeholder="<?php echo $this->id ?>" autocomplete="cc-name" required />
+                    <input type="text" id="cname" name="bpm-payment-ccname" style="background-color:#ffffff;width: 100%;" placeholder="YAMADA TARO" autocomplete="cc-name" required />
                     <div style="font-size: 10px;color: #666; padding: 5px;">
                       半角英文字(大)
                     </div>
