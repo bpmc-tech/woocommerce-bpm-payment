@@ -27,7 +27,7 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 - こちらのURL(https://github.com/bpmc-tech/woocommerce-bpm-payment/releases)
   から「woocommerce-bpm-payment_v⚪︎⚪︎.zip」をクリックしてダウンロードします。
   
-![スクリーンショット 2023-11-21 16 45 15](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/b651eff1-b0a0-46ab-bff7-1ab380fdf298)
+![スクリーンショット 2024-04-25 17 01 38](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/f9176932-7282-457a-81e6-5dfa2a783d72)
 
 ## 5.3．プラグインのインストール方法
 - プラグインの項目から「新規プラグインを追加」を選択します。
