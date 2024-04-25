@@ -36,7 +36,7 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 - 「プラグインのアップロード」から5.2でダウンロードしたzipファイルを選択し、「今すぐインストール」をクリックします。
   
-  ![スクリーンショット 2024-04-25 17 04 46](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/35bbbdd0-52c1-48a3-9ee4-3b692ff8191d)
+![スクリーンショット 2024-04-25 17 04 46](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/35bbbdd0-52c1-48a3-9ee4-3b692ff8191d)
 
 - 画面が切り替わるので「プラグインを有効化」を選択し、プラグインを有効化します。
   
@@ -59,11 +59,13 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 | API Token | 弊社から発行された値を入力してください。 |
 | ログ出力をする | 開発者向けの項目になります。詳しくは6.1に記載します。 |
 
-![スクリーンショット 2023-11-21 12 38 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/8e43240d-5560-4d87-8fdd-e247441d88da)
+![スクリーンショット 2024-04-25 18 00 28](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/a29c243f-d27d-467f-afa3-a6b6f6e63934)
 
 ## 5.5．IPNの設定
 
 - 店舗管理サイトにログインし、結果通知設定(HTTP)より設定します。
+  
+![スクリーンショット 2024-04-25 17 52 10](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/dca574e9-8411-46ba-a7f6-5c221ee3a539)
 
 ## 5.6．実際の決済フォームの説明
 - 購入画面で「BPM Payment」を選択します。
