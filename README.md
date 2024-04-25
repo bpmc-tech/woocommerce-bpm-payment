@@ -61,18 +61,18 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 ![スクリーンショット 2023-11-21 12 38 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/8e43240d-5560-4d87-8fdd-e247441d88da)
 
-##IPNの設定方法を書く
+## 5.5．IPNの設定
 
-## 5.5．実際の決済フォームの説明
+- 店舗管理サイトにログインし、結果通知設定(HTTP)より設定します。
+
+## 5.6．実際の決済フォームの説明
 - 購入画面で「BPM Payment」を選択します。
 
 ![スクリーンショット 2023-11-21 16 58 29](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/1e763ca7-7e2c-4247-949b-b2184774d0d7)
 
-- 必要な項目を入力し、決済します。
+- 「注文する」を押すことでBPM決済ページに遷移します。
 
-![スクリーンショット 2023-11-21 16 58 45](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/b3800260-6da9-4dbc-b674-6f00f0aae5fb)
-
-## 5.6．オーダー画面の確認方法
+## 5.7．オーダー画面の確認方法
 - 左側のメニューバーの「woocommerce」から「設定」を選択します。
 
 ![スクリーンショット 2023-11-21 17 05 53](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/a1ec36a3-cb1c-43cf-a457-d53a904afb70)
