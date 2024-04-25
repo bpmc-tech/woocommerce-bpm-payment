@@ -1,7 +1,7 @@
 <?php
 /* @wordpress-plugin
  * Plugin Name:       WooCommerce BPM payment plugin
- * Version:           1.0.0
+ * Version:           1.1.0
  * WC requires at least: 2.6
  * WC tested up to: 3.5
  * Author:            BPM inc
@@ -25,47 +25,10 @@ if(wpruby_bpm_payment_is_woocommerce_active()){
 		$gateways[] = 'WC_Bpm_Payment_Gateway';
 		return $gateways; 
 	}
-	// register_activation_hook('woocommerce-bpm-payment/woocommerce-bpm-payment-gateway.php', 'test2' );
-	// function test2(){
-	// 	file_put_contents(
-	// 		'/var/www/logs/payment.log',
-	// 		"register_activation2".PHP_EOL,
-	// 		FILE_APPEND,
-	// 		);
-	// }
-
-	// add_filter('woocommerce_payment_gateways','test_file');
-	// 	function test_file(){
-	// 	file_put_contents(
-	// 		'/var/www/logs/payment.log',
-	// 		"payment_gateways".PHP_EOL,
-	// 		FILE_APPEND,
-	// 	  );
-	// }
 
 	add_action('plugins_loaded', 'init_bpm_payment_gateway');
 	function init_bpm_payment_gateway(){
-
-		// file_put_contents(
-		// 	'/var/www/logs/payment.log',
-		// 	"plugin_loaded".PHP_EOL,
-		// 	FILE_APPEND,
-		//   );
 		require 'class-woocommerce-bpm-payment-gateway.php';
-
-		// 以下Returnまで追記
-		// if ( is_admin() && current_user_can( 'active_plugins') && !is_plugin_active( 'woocommerce/woocommerce.php') ) {
- 
-		// 	// Show dismissible error notice
-		// 	add_action( 'admin_notices', 'my_plugin_woocommerce_check_notice' );
-	 
-		// 	// Deactivate this plugin
-		// 	deactivate_plugins( plugin_basename( __FILE__) );
-		// 	if ( isset( $_GET['activate'] ) ) {
-		// 		unset( $_GET['activate'] );
-		// 	}
-		// 	return;
-		// }  
 	
 	}
 
