@@ -70,9 +70,11 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 ## 5.6．実際の決済フォームの説明
 - 購入画面で「BPM Payment」を選択します。
 
-![スクリーンショット 2023-11-21 16 58 29](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/1e763ca7-7e2c-4247-949b-b2184774d0d7)
+![スクリーンショット 2024-04-25 18 05 19](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/d887bcc2-8abd-438d-ae1c-300fdf813649)
 
 - 「注文する」を押すことでBPM決済ページに遷移します。
+  
+![スクリーンショット 2024-04-25 18 05 40](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/ad93eec4-1d1e-4cca-9096-be7ca707d1c4)
 
 ## 5.7．オーダー画面の確認方法
 - 左側のメニューバーの「woocommerce」から「設定」を選択します。
