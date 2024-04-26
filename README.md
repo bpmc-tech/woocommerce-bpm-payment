@@ -15,11 +15,11 @@ WoocommerceにてBPMクレジット決済をするためのプラグインにな
 
 MITライセンスとなっております。
 
-ソースコードに変更に伴ういかなる責任も弊社は負いません。
+ソースコードの変更に伴ういかなる責任も弊社は負いません。
 
 # 5．導入手順
 ## 5.1．事前に必要なもの
-弊社との契約時に発行される、「API Token」 「API Secret」が必要になります。
+弊社との契約時に発行される、「API Token」 が必要になります。
       
 IPアドレスの登録も必要になります。（別途登録方法は案内いたします）。
 
@@ -27,7 +27,7 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 - こちらのURL(https://github.com/bpmc-tech/woocommerce-bpm-payment/releases)
   から「woocommerce-bpm-payment_v⚪︎⚪︎.zip」をクリックしてダウンロードします。
   
-![スクリーンショット 2023-11-21 16 45 15](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/b651eff1-b0a0-46ab-bff7-1ab380fdf298)
+![スクリーンショット 2024-04-25 17 01 38](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/f9176932-7282-457a-81e6-5dfa2a783d72)
 
 ## 5.3．プラグインのインストール方法
 - プラグインの項目から「新規プラグインを追加」を選択します。
@@ -36,11 +36,11 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 - 「プラグインのアップロード」から5.2でダウンロードしたzipファイルを選択し、「今すぐインストール」をクリックします。
   
-![スクリーンショット 2023-11-22 11 52 15](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/1eaac4eb-dafa-45e4-91f6-f1c8ea2ff856)
+![スクリーンショット 2024-04-25 17 04 46](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/35bbbdd0-52c1-48a3-9ee4-3b692ff8191d)
 
 - 画面が切り替わるので「プラグインを有効化」を選択し、プラグインを有効化します。
   
-![スクリーンショット 2023-11-22 11 52 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/3acda431-988f-4a88-b660-b8880ebcd87a)
+![スクリーンショット 2024-04-25 17 05 17](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/acb79b46-51f5-491d-9995-f1a3666f08b6)
 
 ## 5.4．設定方法
 - 左側のメニューバーの「woocommerce」から「設定」を選択します。
@@ -51,39 +51,49 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 ![スクリーンショット 2023-11-21 12 38 19](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/93211488-fb3d-4223-a559-34dd19e17712)
 
-- 設定画面が開くので、「Endpoint URL」「API_TOKEN」「API_SECRET」「対応カードブランド」を設定します。
+- 設定画面が開くので、「API_TOKEN」を設定します。
 
 | 設定項目 | 設定内容 |
 |:----|:----|
 | 支払い名称 | 支払いページに表示されるタイトルになります。 |
-| Endpoint URL | `https://payment.bpmc.jp/gateway/[API_TOKEN]/payment` <br>`[API_TOKEN]`は弊社から発行された値に置換してください |
 | API Token | 弊社から発行された値を入力してください。 |
-| API Secret | 弊社から発行された値を入力してください。 |
-| 利用可能なブランド | 利用可能なカードブランドにチェックをつけてください（契約時に弊社からお知らせいたします） |
 | ログ出力をする | 開発者向けの項目になります。詳しくは6.1に記載します。 |
 
-![スクリーンショット 2023-11-21 12 38 25](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/8e43240d-5560-4d87-8fdd-e247441d88da)
+![スクリーンショット 2024-04-25 18 00 28](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/a29c243f-d27d-467f-afa3-a6b6f6e63934)
 
+## 5.5．IPNの設定
 
-## 5.5．実際の決済フォームの説明
+- 店舗管理サイトにログインし、結果通知設定(HTTP)より設定します。<br>
+  送信状態は「送信する(POST)」を設定していただき、<br>
+  HTTP結果通知の欄には`（御社ECサイトドメイン）/wc-api/bpm_payment_ipn/` とご入力ください。
+  
+![スクリーンショット 2024-04-25 17 52 10](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/dca574e9-8411-46ba-a7f6-5c221ee3a539)
+
+## 5.6．実際の決済フォームの説明
 - 購入画面で「BPM Payment」を選択します。
 
-![スクリーンショット 2023-11-21 16 58 29](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/1e763ca7-7e2c-4247-949b-b2184774d0d7)
+![スクリーンショット 2024-04-26 12 45 49](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/d29f0ed3-9855-4d02-a0cd-1c23da5bba08)
 
-- 必要な項目を入力し、決済します。
+- 「注文する」を押すことでBPM決済ページに遷移します。
+  
+![スクリーンショット 2024-04-25 18 05 40](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/ad93eec4-1d1e-4cca-9096-be7ca707d1c4)
 
-![スクリーンショット 2023-11-21 16 58 45](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/b3800260-6da9-4dbc-b674-6f00f0aae5fb)
+## 5.7．オーダー画面の確認方法
+- 左側のメニューバーの「woocommerce」から「注文」を選択します。
 
-## 5.6．オーダー画面の確認方法
-- 左側のメニューバーの「woocommerce」から「設定」を選択します。
+| 注文名称 | 状態 |
+|:----|:----|
+| 支払い待ち | 支払いページに遷移したあと、まだ決済が行われていない状態です。 |
+| キャンセル | 支払いページに遷移したあと、決済が行われる前に注文ページに戻ってきた状態です。 |
+| 処理中| BPM決済サイトでの支払いが終わった状態です。承認番号などを確認することができます。 |
 
-![スクリーンショット 2023-11-21 17 05 53](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/a1ec36a3-cb1c-43cf-a457-d53a904afb70)
+![スクリーンショット 2024-04-26 12 31 24](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0c4441e1-dc29-43cd-8037-5266087c170a)
 
 - 各注文を選択することで注文の詳細を確認できます。
   
   承認番号を用いることで、BPM側のサイトで検索することも可能です。
 
-![スクリーンショット 2023-11-21 17 07 05](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/245b526a-ec04-4f71-8281-85467921c727)
+![スクリーンショット 2024-04-26 12 47 32](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0dd36d8d-dee5-4506-84df-79079822ba0a)
 
 # 6．開発者向け
 ## 6.1．作成されるデータベースについて
