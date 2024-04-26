@@ -93,6 +93,8 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
   
   承認番号を用いることで、BPM側のサイトで検索することも可能です。
 
+![スクリーンショット 2024-04-26 12 47 32](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0dd36d8d-dee5-4506-84df-79079822ba0a)
+
 ![スクリーンショット 2023-11-21 17 07 05](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/245b526a-ec04-4f71-8281-85467921c727)
 
 # 6．開発者向け
