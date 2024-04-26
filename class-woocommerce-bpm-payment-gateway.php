@@ -200,14 +200,11 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     // デバッグ用
     $wpdb->show_errors();
     $wc_orders = $wpdb->prefix .'wc_orders';
-
-    // wp-wc-ordersから最新のIDを取得
-    $id = $wpdb -> get_var("SELECT MAX(id) FROM $wc_orders");
   
     // insert処理
     $table_name = $wpdb->prefix ."wc_bpm_payment_trans";
     $data = array(
-      'wp_wc_orders_id' => $id,
+      'wp_wc_orders_id' => $order_id,
       'tran_code' => $tran_code,
       'dba' => $dba,
     );
