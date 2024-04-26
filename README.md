@@ -81,7 +81,7 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 ## 5.7．オーダー画面の確認方法
 - 左側のメニューバーの「woocommerce」から「設定」を選択します。
 
-![スクリーンショット 2023-11-21 17 05 53](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/a1ec36a3-cb1c-43cf-a457-d53a904afb70)
+![スクリーンショット 2024-04-26 12 31 24](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0c4441e1-dc29-43cd-8037-5266087c170a)
 
 - 各注文を選択することで注文の詳細を確認できます。
   
