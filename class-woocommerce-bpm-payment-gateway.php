@@ -11,7 +11,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     $this->id = 'bpm_payment';
     $this->method_title = __('BPM Payment','woocommerce-bpm-payment-gateway');
     $this->title = __('BPM Payment','woocommerce-bpm-payment-gateway');
-    $this->has_fields = true;
+    $this->has_fields = false;
     $this->init_form_fields();
     $this->init_settings();
     $this->enabled = $this->get_option('enabled');
@@ -141,7 +141,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     }
 
 
-    $callback_url = get_bloginfo('url')."/wc-api/bpm_payment_callback/";
+    $callback_url = get_bloginfo('url')."/wc-api/bpm_payment_callback/?shop_tracking=".$order_id;;
 
 
     //header( 'HTTP/1.1 200 OK' );
@@ -188,9 +188,6 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     $tran_code = isset($_REQUEST['tran_code']) ? $_REQUEST['tran_code'] : null;
     $dba = isset($_REQUEST['dba']) ? $_REQUEST['dba'] : null;
 
-    output_log('ipn'.$tran_code);
-    output_log('ipn'.$dba);
-
     // 完了処理
 
     // Reduce stock levels
@@ -215,6 +212,11 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
       'dba' => $dba,
     );
 
+    if($this->log_permission == 'yes'){
+      output_log('PAYMENT START ----------');
+      output_log('REQUEST PAYLOAD: '.json_encode($data));
+    }
+
     $wpdb -> insert($table_name, $data);
     
     if(isset($_POST[ $this->id.'-admin-note']) && trim($_POST[ $this->id.'-admin-note'])!=''){
@@ -232,15 +234,17 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     global $woocommerce;
     $order_id = isset($_REQUEST['shop_tracking']) ? $_REQUEST['shop_tracking'] : null;
     $cancel = isset($_REQUEST['cancel']) ? $_REQUEST['cancel'] : '0';
-    $order = new WC_Order($order_id);
+    // $order = new WC_Order($order_id);
+    $order = wc_get_order( $order_id );
     
-    
+    // output_log($order);
 
     $redirect_url = get_bloginfo('url')."/checkout/";
 
     if($cancel === '1'){
       // do_action( 'woocommerce_set_cart_cookies',  true );
       //　支払いキャンセルされたときの処理
+      $order->update_status('cancelled', __( 'Awaiting payment', 'woocommerce-bpm-payment-gateway' ));
       wc_add_notice( '支払いがキャンセルされました.', 'error' );
       wp_redirect( $redirect_url);
 
@@ -262,9 +266,6 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     ?>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/jquery.card.js"></script> 
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/card@2.5.4/dist/card.min.css">
-        <div>
-            <h4>BPMでの決済の場合は以下の『注文する』をクリックしてください</h4>
-        </div>
       <script type="text/javascript">
       </script>
       <?php
