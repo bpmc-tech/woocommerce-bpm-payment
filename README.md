@@ -95,8 +95,6 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 ![スクリーンショット 2024-04-26 12 47 32](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0dd36d8d-dee5-4506-84df-79079822ba0a)
 
-![スクリーンショット 2023-11-21 17 07 05](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/245b526a-ec04-4f71-8281-85467921c727)
-
 # 6．開発者向け
 ## 6.1．作成されるデータベースについて
 プラグインを有効化し、BPM-Paymentにて決済を行うと、「wp_wc_bpm_payment_tran」テーブルが作成されます。
