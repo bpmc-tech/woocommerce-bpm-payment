@@ -65,7 +65,7 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 - 店舗管理サイトにログインし、結果通知設定(HTTP)より設定します。<br>
   送信状態は「送信する(POST)」を設定していただき、<br>
-  HTTP結果通知の欄には`（御社ECサイトドメイン）/wc-api/bpm_payment_ipn/` とご入力ください。
+  HTTP結果通知の欄には`http(s)://<御社ECサイトドメイン>/wc-api/bpm_payment_ipn/` とご入力ください。
   
 ![スクリーンショット 2024-04-25 17 52 10](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/dca574e9-8411-46ba-a7f6-5c221ee3a539)
 
