@@ -4,6 +4,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
 
   public $api_token;
   public $log_permission;
+  public $secure_permission;
   /*
    * construct
    +++++++++++++++++++++++++++++++++++++++*/
@@ -17,7 +18,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     $this->enabled = $this->get_option('enabled');
     $this->title = $this->get_option('title');
     $this->api_token = $this->get_option('api_token');
-
+    $this->secure_permission = $this->get_option('secure_permission');
     $this->log_permission = $this->get_option('log_permission');
     
     // セレクトボックスの値を保存するためのアクションフックを設定
@@ -56,6 +57,12 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
           'description'   => __( 'API_TOKEN', 'woocommerce-bpm-payment-gateway' ),
           'default'   => __( 'API_TOKEN', 'woocommerce-bpm-payment-gateway' ),
           'desc_tip'    => true,
+        ),
+        'secure_permission' => array(
+          'title'     => __( '3Dセキュアを使用する', 'woocommerce-bpm-payment-gateway' ),
+          'type'      => 'checkbox',
+          'description'   => __( '', 'woocommerce-bpm-payment-gateway' ),
+          'default'   => 'no'
         ),
         'log_permission' => array(
           'title' => __( 'ログ出力をする', 'woocommerce-bpm-payment-gateway' ),
@@ -141,6 +148,13 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     }
 
 
+    $redirect_url = "https://payment.bpmc.jp/link/{$this->api_token}/payment";
+       
+    if($this->secure_permission == 'yes'){
+      $redirect_url = "https://payment.bpmc.jp/3ds/link/{$this->api_token}/payment";
+    }
+
+
     $callback_url = get_bloginfo('url')."/wc-api/bpm_payment_callback/?shop_tracking=".$order_id;;
 
 
@@ -153,7 +167,7 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
       <meta charset="utf-8">
     </head>
     <body>
-      <form method="post" id="myForm" action="https://payment.bpmc.jp/link/{$this->api_token}/payment">
+      <form method="post" id="myForm" action="{$redirect_url}">
         <input type="hidden" name="product" value="{$item_name}" />
         <input type="hidden" name="amount" value="{$order->get_total()}" />
         <input type="hidden" name="currency_code" value="{$order->currency}" />
@@ -233,8 +247,6 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     $cancel = isset($_REQUEST['cancel']) ? $_REQUEST['cancel'] : '0';
     // $order = new WC_Order($order_id);
     $order = wc_get_order( $order_id );
-    
-    // output_log($order);
 
     $redirect_url = get_bloginfo('url')."/checkout/";
 
@@ -259,12 +271,16 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
 
   }
 
+
   public function payment_fields(){
     ?>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/jquery.card.js"></script> 
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/card@2.5.4/dist/card.min.css">
       <script type="text/javascript">
       </script>
+     <div id="bpm_checkout" style="max-width:400px; width:100%;font-size:min(16px,30px);margin: 0 auto;">
+      <div>
+          <span>カード情報などはページ遷移後、決済代行会社の画面でご入力いただきます。</span>
+      </div>
+     </div>
       <?php
     }
   } 

@@ -14,4 +14,12 @@
         );
         
     };
+    add_filter('woocommerce_gateway_description', 'custom_payment_gateway_description', 20, 2);
+
+    function custom_payment_gateway_description($description, $payment_id) {
+        if($payment_id === 'bpm_payment') {
+            $description = '<span class="custom-payment-description" style="font-size:100%;"></span>';
+        }
+        return $description;
+    }
 ?>
