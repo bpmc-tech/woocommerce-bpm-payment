@@ -154,9 +154,21 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
       $redirect_url = "https://payment.bpmc.jp/3ds/link/{$this->api_token}/payment";
     }
 
+    $tel = $order->get_billing_phone();
+
+    $tel = str_replace("+", "", $tel);
+    $tel = str_replace("-", "", $tel);
+    $tel = str_replace(" ", "", $tel);
+
+    $amount = $order->get_total();
+    $currency = $order->currency;
+    if($currency == 'JPY'){
+        $amount = intval($amount);
+    } else {
+        $amount = floatval($amount);
+    }
 
     $callback_url = get_bloginfo('url')."/wc-api/bpm_payment_callback/?shop_tracking=".$order_id;;
-
 
     //header( 'HTTP/1.1 200 OK' );
     $html = <<<HTML
@@ -169,12 +181,12 @@ class WC_Bpm_Payment_Gateway extends WC_Payment_Gateway{
     <body>
       <form method="post" id="myForm" action="{$redirect_url}">
         <input type="hidden" name="product" value="{$item_name}" />
-        <input type="hidden" name="amount" value="{$order->get_total()}" />
+        <input type="hidden" name="amount" value="{$amount}" />
         <input type="hidden" name="currency_code" value="{$order->currency}" />
         <input type="hidden" name="shop_tracking" value="{$order_id}" />
         <input type="hidden" name="callback_url" value="{$callback_url}" />
         <input type="hidden" name="email" value="{$order->get_billing_email()}" />
-        <input type="hidden" name="tel" value="{$order->get_billing_phone()}" />
+        <input type="hidden" name="tel" value="{$tel}" />
         <input type="hidden" name="shop_data1" value="" />
         <input type="hidden" name="shop_data2" value="" />
         <input type="hidden" name="shop_data3" value="" />   
