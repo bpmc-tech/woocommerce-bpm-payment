@@ -1,10 +1,10 @@
 # 1.　はじめに
-利用するためには、BPMクレジット決済サービスに申し込みが必要となります。
+利用するためには、クレジット決済サービスに申し込みが必要となります。
 
 **申込みはこちらから(https://bpmc.co.jp/)**
 
 # 2.　プラグインの概要
-WoocommerceにてBPMクレジット決済をするためのプラグインになります。
+Woocommerceにてクレジット決済をするためのプラグインになります。
 
 # 3.　サポート環境
 - WordPress `v6+`
@@ -74,9 +74,10 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 ![スクリーンショット 2024-04-26 12 45 49](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/d29f0ed3-9855-4d02-a0cd-1c23da5bba08)
 
-- 「注文する」を押すことでBPM決済ページに遷移します。
+- 「注文する」を押すことで決済ページに遷移します。
   
-![スクリーンショット 2024-04-25 18 05 40](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/ad93eec4-1d1e-4cca-9096-be7ca707d1c4)
+
+<img width="1905" height="805" alt="payment-page" src="https://github.com/user-attachments/assets/9f4d2d9f-d3fd-4178-bf28-45addd758fc4" />
 
 ## 5.7．オーダー画面の確認方法
 - 左側のメニューバーの「woocommerce」から「注文」を選択します。
@@ -91,13 +92,13 @@ IPアドレスの登録も必要になります。（別途登録方法は案内
 
 - 各注文を選択することで注文の詳細を確認できます。
   
-  承認番号を用いることで、BPM側のサイトで検索することも可能です。
+  承認番号を用いることで弊社サイトで検索することも可能です。
 
 ![スクリーンショット 2024-04-26 12 47 32](https://github.com/bpmc-tech/woocommerce-bpm-payment/assets/138442046/0dd36d8d-dee5-4506-84df-79079822ba0a)
 
 # 6．開発者向け
 ## 6.1．作成されるデータベースについて
-プラグインを有効化し、BPM-Paymentにて決済を行うと、「wp_wc_bpm_payment_tran」テーブルが作成されます。
+プラグインを有効化し、決済を行うと、「wp_wc_bpm_payment_tran」テーブルが作成されます。
 
 また、5.4の設定画面にて「ログ出力をする」にチェックを付けると、ログファイルを出力します。ログファイルには
  
